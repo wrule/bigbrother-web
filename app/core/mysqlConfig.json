@@ -1,0 +1,9 @@
+{
+  "dialect": "mysql",
+  "host": "midware.dev.perfma-inc.com",
+  "port": 3306,
+  "database": "perfma_tuba",
+  "username": "app_tuba",
+  "password": "Perfma@1234",
+  "logging": false
+}

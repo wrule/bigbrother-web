@@ -31,7 +31,7 @@ export class MySQLDao implements IDao {
    * @param api Api
    */
   public async InsertApiHistory(api: any): Promise<number | null> {
-    const result = await this.sequelize.query({
+    await this.sequelize.query({
       query: SQL.SQL_InsertApiHistory,
       values: [
         api.hash,
