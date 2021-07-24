@@ -14,16 +14,19 @@ export default class HomeController extends Controller {
 
   public async getProjectApiList() {
     const { ctx } = this;
-    ctx.body = await ctx.service.test.sayHi('egg');
+    const projectName = ctx.query.projectName || '';
+    ctx.body = await Core.GetProjectApiList(projectName);
   }
 
   public async getApiHistory() {
     const { ctx } = this;
-    ctx.body = await ctx.service.test.sayHi('egg');
+    const hash = ctx.query.hash || '';
+    ctx.body = await Core.GetApiHistory(hash);
   }
 
   public async getApiHistoryDetail() {
     const { ctx } = this;
-    ctx.body = await ctx.service.test.sayHi('egg');
+    const id = Number(ctx.query.id || '');
+    ctx.body = await Core.GetApiHistoryDetail(id);
   }
 }
