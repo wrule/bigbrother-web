@@ -76,9 +76,11 @@ SELECT DISTINCT
   prjName,
   watcherType,
   httpMethod,
-  httpPath
+  httpPath,
+	(SELECT COUNT(1) FROM api b WHERE b.\`hash\` = a.\`hash\`) 'apiHistoryNum',
+	(SELECT c.id FROM api c WHERE c.\`hash\` = a.\`hash\` ORDER BY c.reportTime DESC LIMIT 1) 'apiLatestId'
 FROM
-  api
+  api a
 WHERE
   prjName = ?
 `;
