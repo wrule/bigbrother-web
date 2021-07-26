@@ -29,4 +29,10 @@ export default class HomeController extends Controller {
     const id = Number(ctx.query.id || '');
     ctx.output(await Core.GetApiHistoryDetail(id));
   }
+
+  public async getLatestApi() {
+    const { ctx } = this;
+    const hash = ctx.query.hash || '';
+    ctx.output(await Core.GetLatestApi(hash));
+  }
 }

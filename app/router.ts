@@ -8,4 +8,5 @@ export default (app: Application) => {
   router.get('/api/api/getProjectApiList', controller.home.getProjectApiList);
   router.get('/api/api/getApiHistory', controller.home.getApiHistory);
   router.get('/api/api/getApiHistoryDetail', controller.home.getApiHistoryDetail);
+  router.get('/api/api/getLatestApi', controller.home.getLatestApi);
 };
